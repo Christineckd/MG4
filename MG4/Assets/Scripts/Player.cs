@@ -63,8 +63,8 @@ public class Player : MonoBehaviour
         //      Component.
         //
         // Feature 5 of the rubric should work after this.
-
-
+        other. gameObject . GetComponent<FloatAnimation>().StopAnimation();
+       
         // STEP 6 -------------------------------------------------------------
     }
 
@@ -81,15 +81,15 @@ public class Player : MonoBehaviour
             {
                 case EquationType.Add:
                     // UNCOMMENT AFTER STEP 3
-                    //correct = CheckIfAdditionCorrect(number);
+                    correct = CheckIfAdditionCorrect(number);
                     break;
                 case EquationType.Subtract:
                     // UNCOMMENT AFTER STEP 4
-                    //correct = CheckIfSubtractionCorrect(number);
+                    correct = CheckIfSubtractionCorrect(number);
                     break;
                 case EquationType.Multiply:
                     // UNCOMMENT AFTER STEP 5
-                    //correct = CheckIfMultiplicationCorrect(number);
+                    correct = CheckIfMultiplicationCorrect(number);
                     break;
             }
         }
@@ -131,7 +131,15 @@ public class Player : MonoBehaviour
     // You will need to fill in the body of the method to check IF _number1 plus
     //      _number2 is equal to the answer the player gave. The answer the player
     //      gave should be the sole PARAMETER for this method.
-    //
+    private bool CheckIfAdditionCorrect (int answer)
+    {
+        if (answer== _number1 +_number2)
+        {
+            return true;
+        }
+            return false;
+        
+    }
     // After you write this method, uncomment the line above that says
     //      "UNCOMMENT AFTER STEP 3".
     //
@@ -155,7 +163,16 @@ public class Player : MonoBehaviour
     //      "UNCOMMENT AFTER STEP 4".
 
     // private ??? CheckIfSubtractionCorrect (??? ???)
-
+    private bool CheckIfSubtractionCorrect (int answer)
+    {
+        if (answer== _number1 -_number2)
+        {
+            return true;
+        }
+       
+            return false;
+    
+    }
     // STEP 4 -----------------------------------------------------------------
 
 
@@ -171,7 +188,16 @@ public class Player : MonoBehaviour
     //      "UNCOMMENT AFTER STEP 5".
 
     // private ??? CheckIfMultiplicationCorrect (??? ???)
-
+    private bool CheckIfMultiplicationCorrect (int answer)
+    {
+        if (answer== _number1 *_number2)
+        {
+            return true;
+        }
+      
+            return false;
+        
+    }
     // STEP 5 -----------------------------------------------------------------
 
 }
